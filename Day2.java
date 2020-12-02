@@ -1,6 +1,4 @@
 import java.util.*;
-import java.net.*;
-import java.io.*;
 public class Day2{
     //count number of valid passwords where ex. "1-3 a: aasb" is 'a' occurring in "aasb" between 1-3 times
     public static int countValidPassword (ArrayList <String> temp){
