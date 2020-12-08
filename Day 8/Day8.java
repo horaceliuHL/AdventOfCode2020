@@ -1,5 +1,7 @@
 import java.util.*;
 public class Day8 {
+    //runs through the instructions, returns a map containing an instruction order array, a boolean visited array, and the accumulator
+    //for both parts
     public static Map<ArrayList<Boolean>, ArrayList<Integer>>  forBothParts (ArrayList<String> temp){
         int accumulator = 0;
         boolean [] visited = new boolean [temp.size()];
@@ -30,12 +32,14 @@ public class Day8 {
         returnMap.put(soComplicated, order);
         return returnMap;
     }
+    //part 1: find the accumulator value before the program hits an infinite loop
     public static int accumulatorValue (ArrayList <String> temp){
         Map <ArrayList<Boolean>, ArrayList<Integer>> returnMap = forBothParts(temp);
         Map.Entry<ArrayList<Boolean>, ArrayList<Integer>> entry = returnMap.entrySet().iterator().next();
         ArrayList <Integer> returnValue = entry.getValue();
         return returnValue.get(returnValue.size() - 1);
     }
+    //part 2: fix one line of code to make the program run and get the accumulator value at the end
     public static int fixError (ArrayList <String> temp){
         Map <ArrayList<Boolean>, ArrayList<Integer>> returnMap = forBothParts(temp);
         Map.Entry<ArrayList<Boolean>, ArrayList<Integer>> entry = returnMap.entrySet().iterator().next();
